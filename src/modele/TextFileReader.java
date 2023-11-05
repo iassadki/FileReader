@@ -82,15 +82,12 @@ public static boolean compareFiles(String filePath1, String filePath2) {
          BufferedReader reader2 = new BufferedReader(new InputStreamReader(new FileInputStream(filePath2), StandardCharsets.UTF_8))) {
 
         while ((lineOne = reader1.readLine()) != null && (lineTwo = reader2.readLine()) != null) {
-            System.out.println("ligne du fichier 1: " + lineOne);
-            System.out.println("ligne du fichier 2: " + lineTwo);
 
             if (!Objects.equals(lineOne, lineTwo)) {
                 return false; // Si une ligne ne correspond pas, retourne false immédiatement
             }
         }
 
-        // Si on arrive ici, cela signifie que toutes les lignes correspondent
         return true;
 
     } catch (IOException e) {

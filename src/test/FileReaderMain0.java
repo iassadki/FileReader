@@ -9,19 +9,19 @@ public class FileReaderMain0 {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         
-        // Text File Reader
-        String file1 = "C:\\Users\\ilias\\Desktop\\su\\java\\FileReader\\FileReader\\src\\test\\fichier.txt";
-        String file2 = "C:\\Users\\ilias\\Desktop\\su\\java\\FileReader\\FileReader\\src\\test\\fichier2.txt";
+        // Text File Reader path
+        String file1 = "C:\\Users\\ilias\\Desktop\\su\\java\\Projets\\FileReader\\FileReader\\src\\test\\fichier.txt";
+        String file2 = "C:\\Users\\ilias\\Desktop\\su\\java\\Projets\\FileReader\\FileReader\\src\\test\\fichier2.txt";
 
         TextFileReader fileReader = new TextFileReader(file1);
         String endroit = fileReader.fichieralendroit(file1);
         String envers = fileReader.fichieralenvers(file1);
         String palindrome = fileReader.fichierpalindrome(file1);
         
-        String file1json = "C:\\Users\\ilias\\Desktop\\su\\java\\FileReader\\FileReader\\src\\test\\fichier.json";
-        String file2json = "C:\\Users\\ilias\\Desktop\\su\\java\\FileReader\\FileReader\\src\\test\\fichier2.json"; 
+        // JSON File Reader path
+        String file1json = "C:\\Users\\ilias\\Desktop\\su\\java\\Projets\\FileReader\\FileReader\\src\\test\\fichier.json";
+        String file2json = "C:\\Users\\ilias\\Desktop\\su\\java\\Projets\\FileReader\\FileReader\\src\\test\\fichier2.json"; 
 
-        // JSON File Reader
         JsonFileReader fileReaderjson = new JsonFileReader(file1json);
         String JSONendroit = fileReaderjson.fichieralendroit(file1json);
         String JSONenvers = fileReaderjson.fichieralenvers(file1json);
@@ -35,6 +35,7 @@ public class FileReaderMain0 {
             System.out.println("Contenu du fichier TEXTE en palindrome :\n" + palindrome);
         }
 
+        // Comparaison des deux fichiers TEXTE
         System.out.println(" ");
         boolean isFile1EqualsFile2 = TextFileReader.compareFiles(file1, file2);
 
@@ -52,8 +53,9 @@ public class FileReaderMain0 {
             System.out.println("Contenu du fichier JSON en palindrome :\n" + JSONpalindrome);
         }
 
+        // Comparaison des deux fichiers JSON
         System.out.println(" ");
-        boolean isEquals = TextFileReader.compareFiles(file1json, file2json);
+        boolean isEquals = JsonFileReader.compareFiles(file1json, file2json);
 
         if (isEquals) {
             System.out.println("Les fichiers JSON sont identiques.");
